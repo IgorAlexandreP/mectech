@@ -1,4 +1,4 @@
-import logoMechtechIcon from "@/assets/logo-mectech-icon.png";
+const logoUrl = "/lovable-uploads/3e6bda1f-504f-44e8-9a57-6fcc9836de40.png";
 import { MapPin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
@@ -10,14 +10,10 @@ const Footer = () => {
           <div className="space-y-4 animate-fade-in">
             <div className="flex items-center space-x-3">
               <img 
-                src={logoMechtechIcon} 
+                src={logoUrl} 
                 alt="MecTech Equipamentos Logo" 
-                className="h-12 w-12 transition-transform duration-300 hover:scale-105"
+                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
               />
-              <div>
-                <h3 className="font-roboto font-bold text-2xl text-primary">MecTech</h3>
-                <p className="font-open-sans text-secondary-foreground/80">Equipamentos</p>
-              </div>
             </div>
             <p className="font-open-sans text-secondary-foreground/80 max-w-sm">
               Soluções em equipamentos de qualidade para o seu negócio. 

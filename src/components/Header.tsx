@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMechtechFull from "@/assets/logo-mectech-full.png";
-import logoMechtechIcon from "@/assets/logo-mectech-icon.png";
+const logoUrl = "/lovable-uploads/3e6bda1f-504f-44e8-9a57-6fcc9836de40.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,23 +23,19 @@ const Header = () => {
             {/* Desktop Logo */}
             <div className="hidden md:block">
               <img 
-                src={logoMechtechFull} 
+                src={logoUrl} 
                 alt="MecTech Equipamentos Logo" 
                 className="h-12 w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
             
             {/* Mobile Logo */}
-            <div className="md:hidden flex items-center space-x-3">
+            <div className="md:hidden">
               <img 
-                src={logoMechtechIcon} 
+                src={logoUrl} 
                 alt="MecTech Logo" 
-                className="h-10 w-10 transition-transform duration-300 hover:scale-105"
+                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
               />
-              <div>
-                <h1 className="font-roboto font-bold text-xl text-primary">MecTech</h1>
-                <p className="font-open-sans text-sm text-muted-foreground">Equipamentos</p>
-              </div>
             </div>
           </div>
 
