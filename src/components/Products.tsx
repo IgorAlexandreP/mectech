@@ -76,7 +76,7 @@ const Products = () => {
             asChild
           >
             <a 
-              href="https://wa.me/c/5513991670473" 
+              href="https://wa.me/5513991670473" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2"
