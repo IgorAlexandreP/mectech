@@ -1,26 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Settings, Wrench, Cog } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Products = () => {
-  const productCategories = [
-    {
-      icon: <Settings className="w-12 h-12 text-primary" />,
-      title: "Equipamentos Industriais",
-      description: "Máquinas e equipamentos para indústria"
-    },
-    {
-      icon: <Wrench className="w-12 h-12 text-primary" />,
-      title: "Ferramentas Especializadas", 
-      description: "Ferramentas profissionais de alta qualidade"
-    },
-    {
-      icon: <Cog className="w-12 h-12 text-primary" />,
-      title: "Peças e Componentes",
-      description: "Componentes originais e compatíveis"
-    }
-  ];
-
+  // TODO: Replace with real products from database
+  // const { data: products, isLoading } = useProducts();
+  
   return (
     <section id="produtos" className="py-20 bg-muted/30 section-animate">
       <div className="container mx-auto px-4">
@@ -33,29 +18,42 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {productCategories.map((category, index) => (
+        {/* 
+        TODO: Products Grid - Ready for database integration
+        This section will display products from the database when integrated
+        
+        Structure for future implementation:
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
+          {products?.map((product, index) => (
             <Card 
-              key={index} 
+              key={product.id} 
               className="text-center card-hover animate-slide-up" 
-              style={{ animationDelay: `${index * 0.2}s` }}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-8">
-                <div className="flex justify-center mb-4 transition-transform duration-300 hover:scale-110">
-                  {category.icon}
+              <CardContent className="p-6">
+                <div className="aspect-square bg-muted/50 rounded-lg mb-4 overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
-                <h3 className="font-roboto font-semibold text-xl mb-3">
-                  {category.title}
+                <h3 className="font-roboto font-semibold text-lg mb-2">
+                  {product.name}
                 </h3>
-                <p className="font-open-sans text-muted-foreground">
-                  {category.description}
+                <p className="font-open-sans text-muted-foreground text-sm mb-3">
+                  {product.description}
                 </p>
+                <div className="text-primary font-semibold">
+                  {product.price && `R$ ${product.price}`}
+                </div>
               </CardContent>
             </Card>
           ))}
         </div>
+        */}
 
-        <div className="text-center animate-fade-in" style={{ animationDelay: "0.8s" }}>
+        <div className="text-center animate-fade-in">
           <Button 
             size="lg"
             className="font-open-sans font-semibold px-8 py-6 bg-primary hover:bg-primary-hover text-primary-foreground btn-glow"
