@@ -1,4 +1,4 @@
-const logoUrl = "/lovable-uploads/3e6bda1f-504f-44e8-9a57-6fcc9836de40.png";
+const logoUrl = "/logo-mectech.png";
 import { MapPin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {

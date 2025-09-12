@@ -1,73 +1,149 @@
-# Welcome to your Lovable project
+# MecTech Equipamentos - Landing Page
 
-## Project info
+## Sobre o Projeto
 
-**URL**: https://lovable.dev/projects/1d9f93ad-4421-4a97-baf7-0ec1acd865d6
+Esta é uma landing page moderna e responsiva para a **MecTech Equipamentos**, uma empresa especializada em soluções de equipamentos de qualidade. O site foi desenvolvido para apresentar a empresa, seus produtos e facilitar o contato com clientes através do WhatsApp.
 
-## How can I edit this code?
+### Características Principais
 
-There are several ways of editing your application.
+- **Design Responsivo**: Otimizado para desktop, tablet e mobile
+- **Integração com WhatsApp**: Botões de contato direto para o WhatsApp
+- **Interface Moderna**: Design limpo e profissional com animações suaves
+- **Performance**: Carregamento rápido e otimizado
+- **SEO Friendly**: Estrutura otimizada para mecanismos de busca
 
-**Use Lovable**
+## Tecnologias Utilizadas
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1d9f93ad-4421-4a97-baf7-0ec1acd865d6) and start prompting.
+- **Vite** - Build tool e bundler
+- **React 18** - Biblioteca para interface de usuário
+- **TypeScript** - Tipagem estática para JavaScript
+- **Tailwind CSS** - Framework CSS utilitário
+- **shadcn/ui** - Biblioteca de componentes UI
+- **React Router** - Roteamento para aplicações React
+- **Lucide React** - Ícones modernos
+- **Framer Motion** - Animações (implícito nas classes CSS)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Estrutura do Projeto
 
-**Use your preferred IDE**
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── ui/             # Componentes base (shadcn/ui)
+│   ├── Header.tsx      # Cabeçalho da página
+│   ├── Hero.tsx        # Seção principal
+│   ├── About.tsx       # Sobre a empresa
+│   ├── Products.tsx    # Catálogo de produtos
+│   ├── FAQ.tsx         # Perguntas frequentes
+│   ├── Contact.tsx     # Formulário de contato
+│   ├── Footer.tsx      # Rodapé
+│   └── WhatsAppFloat.tsx # Botão flutuante do WhatsApp
+├── pages/              # Páginas da aplicação
+├── assets/             # Imagens e recursos estáticos
+├── hooks/              # Hooks customizados
+└── lib/                # Utilitários
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Seções da Landing Page
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Hero** - Apresentação principal com call-to-action
+2. **Produtos** - Catálogo de equipamentos (integrado com WhatsApp)
+3. **Sobre** - Informações sobre a empresa e valores
+4. **FAQ** - Perguntas frequentes
+5. **Contato** - Formulário e informações de contato
+6. **WhatsApp Float** - Botão flutuante para contato direto
 
-Follow these steps:
+## Como Executar o Projeto
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Pré-requisitos
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js (versão 16 ou superior)
+- npm ou yarn
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Instalação
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. Clone o repositório:
+```bash
+git clone <URL_DO_REPOSITORIO>
+cd mectech-whats-connect-23
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o servidor de desenvolvimento:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Abra [http://localhost:5173](http://localhost:5173) no seu navegador
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Scripts Disponíveis
 
-**Use GitHub Codespaces**
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria build de produção
+- `npm run preview` - Visualiza o build de produção
+- `npm run lint` - Executa o linter
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Personalização
 
-## What technologies are used for this project?
+### Alterando Informações da Empresa
 
-This project is built with:
+As informações da empresa podem ser alteradas nos seguintes arquivos:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Hero**: `src/components/Hero.tsx`
+- **Sobre**: `src/components/About.tsx`
+- **Contato**: `src/components/Contact.tsx`
+- **WhatsApp**: Número do WhatsApp em `src/components/WhatsAppFloat.tsx`
 
-## How can I deploy this project?
+### Cores e Tema
 
-Simply open [Lovable](https://lovable.dev/projects/1d9f93ad-4421-4a97-baf7-0ec1acd865d6) and click on Share -> Publish.
+As cores podem ser personalizadas no arquivo `tailwind.config.ts`:
 
-## Can I connect a custom domain to my Lovable project?
+```typescript
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        // Suas cores personalizadas
+      }
+    }
+  }
+}
+```
 
-Yes, you can!
+## Deploy
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Build de Produção
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+npm run build
+```
+
+Os arquivos otimizados serão gerados na pasta `dist/`.
+
+### Hospedagem
+
+O projeto pode ser hospedado em qualquer serviço que suporte aplicações React estáticas:
+
+- **Vercel** (recomendado)
+- **Netlify**
+- **GitHub Pages**
+- **AWS S3 + CloudFront**
+
+## Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## Contato
+
+Para dúvidas ou sugestões sobre este projeto, entre em contato através do WhatsApp da MecTech Equipamentos.

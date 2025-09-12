@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const logoUrl = "/lovable-uploads/3e6bda1f-504f-44e8-9a57-6fcc9836de40.png";
+const logoUrl = "/logo-mectech.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +10,6 @@ const Header = () => {
     { name: "Início", href: "#inicio" },
     { name: "Produtos", href: "#produtos" },
     { name: "Sobre Nós", href: "#sobre" },
-    { name: "Depoimentos", href: "#depoimentos" },
     { name: "FAQ", href: "#faq" },
     { name: "Contato", href: "#contato" }
   ];
