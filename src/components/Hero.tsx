@@ -17,10 +17,10 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-roboto font-bold text-5xl md:text-7xl text-background mb-6 animate-slide-up">
-            Soluções em <span className="gradient-text">Equipamentos</span> de Qualidade para o Seu Negócio
+          Monte ou renove sua <span className="gradient-text">Academia</span> com a mesma excelência
           </h1>
           <p className="font-open-sans text-xl md:text-2xl text-background/90 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            Atendendo com excelência em Itanhaém e região
+          Equipamentos de fabricação própria e serviço de reforma que prolonga a vida útil dos seus aparelhos
           </p>
           <Button 
             size="lg"
@@ -34,7 +34,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2"
             >
-              <span>Ver Catálogo no WhatsApp</span>
+              <span>Peça um Orçamento no WhatsApp</span>
               <ExternalLink className="w-5 h-5" />
             </a>
           </Button>

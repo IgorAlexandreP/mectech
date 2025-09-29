@@ -1,30 +1,37 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const logoUrl = "/logo-mectech.png";
+import logo from "@/assets/logo-mectech.png";
+const logoUrl = logo;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     { name: "Início", href: "#inicio" },
-    { name: "Produtos", href: "#produtos" },
-    { name: "Sobre Nós", href: "#sobre" },
+    { name: "Catálogo", href: "#catalogo" },
+    { name: "Sobre", href: "#sobre" },
     { name: "FAQ", href: "#faq" },
     { name: "Contato", href: "#contato" }
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 logo-transparent">
             {/* Desktop Logo */}
             <div className="hidden md:block">
               <img 
                 src={logoUrl} 
                 alt="MecTech Equipamentos Logo" 
-                className="h-12 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-16 w-auto scale-[2.8] -translate-y-2 transition-transform duration-300 hover:scale-[3.0] logo-white-to-transparent"
+                style={{ 
+                  backgroundColor: 'transparent',
+                  mixBlendMode: 'multiply',
+                  background: 'transparent',
+                  transformOrigin: 'left center'
+                }}
               />
             </div>
             
@@ -33,7 +40,13 @@ const Header = () => {
               <img 
                 src={logoUrl} 
                 alt="MecTech Logo" 
-                className="h-10 w-auto transition-transform duration-300 hover:scale-105"
+                className="h-14 w-auto scale-200 transition-transform duration-300 hover:scale-105 logo-white-to-transparent"
+                style={{ 
+                  backgroundColor: 'transparent',
+                  mixBlendMode: 'multiply',
+                  background: 'transparent',
+                  transformOrigin: 'left center'
+                }}
               />
             </div>
           </div>

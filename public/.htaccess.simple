@@ -1,0 +1,12 @@
+# Configuração MÍNIMA para SPA na HostingZone
+# Use este arquivo se os outros não funcionarem
+
+RewriteEngine On
+
+# Se o arquivo ou pasta existe, serve normalmente
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Caso contrário, serve index.html
+RewriteRule ^ /index.html [L]

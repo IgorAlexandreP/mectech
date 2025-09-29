@@ -169,4 +169,42 @@ Enhanced with animations and gradients.
   .skeleton-pulse {
     @apply animate-pulse bg-muted rounded;
   }
+
+  /* Logo transparency */
+  .logo-transparent {
+    background: transparent !important;
+    background-color: transparent !important;
+    mix-blend-mode: normal;
+  }
+
+  .logo-transparent img {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Force transparency on all logo elements */
+  .logo-transparent * {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Remove white background from logo if it exists */
+  .logo-no-bg {
+    filter: brightness(1.1) contrast(1.1);
+    background: transparent !important;
+  }
+
+  /* Alternative: Use CSS to make white background transparent */
+  .logo-white-to-transparent {
+    background: transparent !important;
+    mix-blend-mode: multiply;
+  }
+
+  .logo-white-to-transparent:hover {
+    mix-blend-mode: normal;
+  }
 }

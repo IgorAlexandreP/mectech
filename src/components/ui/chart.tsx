@@ -65,25 +65,28 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null;
   }
 
+  // Criar estilos de forma segura usando CSS-in-JS
+  const styles = Object.entries(THEMES)
+    .map(([theme, prefix]) => {
+      const colorVars = colorConfig
+        .map(([key, itemConfig]) => {
+          const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
+          return color ? `--color-${key}: ${color};` : null;
+        })
+        .filter(Boolean)
+        .join(' ');
+      
+      return `${prefix} [data-chart="${id}"] { ${colorVars} }`;
+    })
+    .join('\n');
+
+  // Usar useMemo para otimizar performance
+  const memoizedStyles = React.useMemo(() => styles, [id, colorConfig]);
+
   return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
-    return color ? `  --color-${key}: ${color};` : null;
-  })
-  .join("\n")}
-}
-`,
-          )
-          .join("\n"),
-      }}
-    />
+    <style>
+      {memoizedStyles}
+    </style>
   );
 };
 
